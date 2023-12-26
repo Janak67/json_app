@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Text(
                   'Posts',
                   style: GoogleFonts.imFellFrenchCanonSc(
-                      fontSize: 20, fontWeight: FontWeight.bold),
+                      fontSize: 22, fontWeight: FontWeight.bold),
                 ),
               ),
               ElevatedButton(
@@ -44,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Text(
                   'Comments',
                   style: GoogleFonts.imFellFrenchCanonSc(
-                      fontSize: 20, fontWeight: FontWeight.bold),
+                      fontSize: 22, fontWeight: FontWeight.bold),
                 ),
               ),
               ElevatedButton(
@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Text(
                   'Albums',
                   style: GoogleFonts.imFellFrenchCanonSc(
-                      fontSize: 20, fontWeight: FontWeight.bold),
+                      fontSize: 22, fontWeight: FontWeight.bold),
                 ),
               ),
               ElevatedButton(
@@ -64,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Text(
                   'Photos',
                   style: GoogleFonts.imFellFrenchCanonSc(
-                      fontSize: 20, fontWeight: FontWeight.bold),
+                      fontSize: 22, fontWeight: FontWeight.bold),
                 ),
               ),
               ElevatedButton(
@@ -74,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Text(
                   'Todos',
                   style: GoogleFonts.imFellFrenchCanonSc(
-                      fontSize: 20, fontWeight: FontWeight.bold),
+                      fontSize: 22, fontWeight: FontWeight.bold),
                 ),
               ),
             ],
