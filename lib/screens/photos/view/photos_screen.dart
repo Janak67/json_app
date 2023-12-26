@@ -21,7 +21,7 @@ class _PhotoScreenState extends State<PhotoScreen> {
           title: Text(
             'Photos',
             style: GoogleFonts.imFellFrenchCanonSc(
-                fontSize: 28, fontWeight: FontWeight.bold, color: white),
+                fontSize: 25, fontWeight: FontWeight.bold, color: white),
           ),
         ),
         body: ListView.builder(

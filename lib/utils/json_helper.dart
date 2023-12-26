@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
+import 'package:json_app/screens/albums/model/albums_model.dart';
 import 'package:json_app/screens/comments/model/comment_model.dart';
 import 'package:json_app/screens/posts/model/posts_model.dart';
 
@@ -18,6 +19,14 @@ class JsonHelper {
     List comment = jsonDecode(jsonString);
     List<CommentModel> modelList =
         comment.map((e) => CommentModel.mapToModel(e)).toList();
+    return modelList;
+  }
+
+  Future<List<AlbumModel>> json_AlbumsToList() async {
+    var jsonString = await rootBundle.loadString('assets/json/album.json');
+    List album = jsonDecode(jsonString);
+    List<AlbumModel> modelList =
+    album.map((e) => AlbumModel.mapToModel(e)).toList();
     return modelList;
   }
 }

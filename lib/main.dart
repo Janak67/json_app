@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:json_app/screens/albums/provider/albums_provider.dart';
 import 'package:json_app/screens/comments/provider/comment_provider.dart';
 import 'package:json_app/screens/posts/provider/posts_provider.dart';
 import 'package:json_app/utils/app_routes.dart';
@@ -18,6 +19,9 @@ void main() {
         ),
         ChangeNotifierProvider(
           create: (context) => CommentProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => AlbumsProvider(),
         ),
       ],
       child: MaterialApp(
