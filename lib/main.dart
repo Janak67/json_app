@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:json_app/screens/albums/provider/albums_provider.dart';
 import 'package:json_app/screens/comments/provider/comment_provider.dart';
+import 'package:json_app/screens/photos/provider/photo_provider.dart';
 import 'package:json_app/screens/posts/provider/posts_provider.dart';
+import 'package:json_app/screens/todos/provider/todo_provider.dart';
 import 'package:json_app/utils/app_routes.dart';
 import 'package:provider/provider.dart';
 
@@ -22,6 +24,12 @@ void main() {
         ),
         ChangeNotifierProvider(
           create: (context) => AlbumsProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => TodoProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => PhotoProvider(),
         ),
       ],
       child: MaterialApp(

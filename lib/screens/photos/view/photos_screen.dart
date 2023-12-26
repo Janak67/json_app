@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:json_app/screens/photos/provider/photo_provider.dart';
 import 'package:json_app/utils/color_list.dart';
+import 'package:provider/provider.dart';
 
 class PhotoScreen extends StatefulWidget {
   const PhotoScreen({super.key});
@@ -10,8 +12,19 @@ class PhotoScreen extends StatefulWidget {
 }
 
 class _PhotoScreenState extends State<PhotoScreen> {
+  PhotoProvider? providerr;
+  PhotoProvider? providerw;
+
+  @override
+  void initState() {
+    super.initState();
+    context.read<PhotoProvider>().getData();
+  }
+
   @override
   Widget build(BuildContext context) {
+    providerr = context.read<PhotoProvider>();
+    providerw = context.watch<PhotoProvider>();
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -25,7 +38,25 @@ class _PhotoScreenState extends State<PhotoScreen> {
           ),
         ),
         body: ListView.builder(
-          itemBuilder: (context, index) {},
+          itemCount: providerw!.photo.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              leading: Text(
+                '${providerw!.photo[index].id}.',
+                style: TextStyle(color: black, fontSize: 15),
+              ),
+              title: Text(
+                '${providerw!.photo[index].title}',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold, color: black, fontSize: 20),
+              ),
+              subtitle: Image.network(
+                '${providerw!.photo[index].thumbnailUrl}',
+                height: 100,
+                width: 100,
+              ),
+            );
+          },
         ),
       ),
     );
