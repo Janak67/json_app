@@ -52,8 +52,9 @@ class _PhotoScreenState extends State<PhotoScreen> {
               ),
               subtitle: Image.network(
                 '${providerw!.photo[index].thumbnailUrl}',
-                height: 100,
+                height: 150,
                 width: 100,
+                fit: BoxFit.cover,
               ),
             );
           },
