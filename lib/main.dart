@@ -5,6 +5,7 @@ import 'package:json_app/screens/comments/provider/comment_provider.dart';
 import 'package:json_app/screens/photos/provider/photo_provider.dart';
 import 'package:json_app/screens/posts/provider/posts_provider.dart';
 import 'package:json_app/screens/todos/provider/todo_provider.dart';
+import 'package:json_app/screens/users/provider/user_provider.dart';
 import 'package:json_app/utils/app_routes.dart';
 import 'package:provider/provider.dart';
 
@@ -30,6 +31,9 @@ void main() {
         ),
         ChangeNotifierProvider(
           create: (context) => PhotoProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => UsersProvider(),
         ),
       ],
       child: MaterialApp(
