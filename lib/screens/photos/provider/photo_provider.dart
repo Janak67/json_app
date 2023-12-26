@@ -7,7 +7,7 @@ class PhotoProvider with ChangeNotifier {
 
   Future<void> getData() async {
     JsonHelper jsonHelper = JsonHelper();
-    List<PhotoModel> l1 = await jsonHelper.json_PhotoToList();
+    List<PhotoModel> l1 = await jsonHelper.photoJsonToList();
     photo = l1;
     notifyListeners();
   }

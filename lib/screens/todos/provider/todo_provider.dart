@@ -7,7 +7,7 @@ class TodoProvider with ChangeNotifier {
 
   Future<void> getData() async {
     JsonHelper jsonHelper = JsonHelper();
-    List<TodoModel> l1 = await jsonHelper.json_TodoToList();
+    List<TodoModel> l1 = await jsonHelper.todoJsonToList();
     todo = l1;
     notifyListeners();
   }

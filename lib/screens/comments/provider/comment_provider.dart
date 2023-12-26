@@ -7,7 +7,7 @@ class CommentProvider with ChangeNotifier {
 
   Future<void> getData() async {
     JsonHelper jsonHelper = JsonHelper();
-    List<CommentModel> l1 = await jsonHelper.json_CommentToList();
+    List<CommentModel> l1 = await jsonHelper.commentJsonToList();
     comment = l1;
     notifyListeners();
   }

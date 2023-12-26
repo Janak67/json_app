@@ -7,7 +7,7 @@ class PostsProvider with ChangeNotifier {
 
   Future<void> getData() async {
     JsonHelper jsonHelper = JsonHelper();
-    List<PostModel> l1 = await jsonHelper.json_PostToList();
+    List<PostModel> l1 = await jsonHelper.postJsonToList();
     post = l1;
     notifyListeners();
   }

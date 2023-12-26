@@ -8,7 +8,7 @@ class AlbumsProvider with ChangeNotifier{
 
   Future<void> getData() async {
     JsonHelper jsonHelper = JsonHelper();
-    List<AlbumModel> l1 = await jsonHelper.json_AlbumsToList();
+    List<AlbumModel> l1 = await jsonHelper.albumsJsonToList();
     albums = l1;
     notifyListeners();
   }

@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/services.dart';
 import 'package:json_app/screens/albums/model/albums_model.dart';
 import 'package:json_app/screens/comments/model/comment_model.dart';
@@ -8,7 +7,7 @@ import 'package:json_app/screens/posts/model/posts_model.dart';
 import 'package:json_app/screens/todos/model/todo_model.dart';
 
 class JsonHelper {
-  Future<List<PostModel>> json_PostToList() async {
+  Future<List<PostModel>> postJsonToList() async {
     var jsonString = await rootBundle.loadString('assets/json/posts.json');
     List post = jsonDecode(jsonString);
     List<PostModel> modelList =
@@ -16,7 +15,7 @@ class JsonHelper {
     return modelList;
   }
 
-  Future<List<CommentModel>> json_CommentToList() async {
+  Future<List<CommentModel>> commentJsonToList() async {
     var jsonString = await rootBundle.loadString('assets/json/comment.json');
     List comment = jsonDecode(jsonString);
     List<CommentModel> modelList =
@@ -24,7 +23,7 @@ class JsonHelper {
     return modelList;
   }
 
-  Future<List<AlbumModel>> json_AlbumsToList() async {
+  Future<List<AlbumModel>> albumsJsonToList() async {
     var jsonString = await rootBundle.loadString('assets/json/album.json');
     List album = jsonDecode(jsonString);
     List<AlbumModel> modelList =
@@ -32,7 +31,7 @@ class JsonHelper {
     return modelList;
   }
 
-  Future<List<TodoModel>> json_TodoToList() async {
+  Future<List<TodoModel>> todoJsonToList() async {
     var jsonString = await rootBundle.loadString('assets/json/todo.json');
     List todo = jsonDecode(jsonString);
     List<TodoModel> modelList =
@@ -40,7 +39,7 @@ class JsonHelper {
     return modelList;
   }
 
-  Future<List<PhotoModel>> json_PhotoToList() async {
+  Future<List<PhotoModel>> photoJsonToList() async {
     var jsonString = await rootBundle.loadString('assets/json/photo.json');
     List photo = jsonDecode(jsonString);
     List<PhotoModel> modelList =
