@@ -87,6 +87,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontSize: 22, fontWeight: FontWeight.bold),
                 ),
               ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, 'country');
+                },
+                child: Text(
+                  'Country',
+                  style: GoogleFonts.imFellFrenchCanonSc(
+                      fontSize: 22, fontWeight: FontWeight.bold),
+                ),
+              ),
             ],
           ),
         ),
