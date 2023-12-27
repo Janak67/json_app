@@ -37,25 +37,27 @@ class _PostsScreenState extends State<PostsScreen> {
                 fontSize: 25, fontWeight: FontWeight.bold, color: white),
           ),
         ),
-        body: ListView.builder(
-          itemCount: providerw!.post.length,
-          itemBuilder: (context, index) {
-            return ListTile(
-              leading: Text(
-                '${providerw!.post[index].id}.',
-                style: TextStyle(color: black, fontSize: 15),
-              ),
-              title: Text(
-                '${providerw!.post[index].title}',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold, color: black, fontSize: 20),
-              ),
-              subtitle: Text(
-                '${providerw!.post[index].body}',
-                style: TextStyle(color: black, fontSize: 15),
-              ),
-            );
-          },
+        body: Scrollbar(
+          child: ListView.builder(
+            itemCount: providerw!.post.length,
+            itemBuilder: (context, index) {
+              return ListTile(
+                leading: Text(
+                  '${providerw!.post[index].id}.',
+                  style: TextStyle(color: black, fontSize: 15),
+                ),
+                title: Text(
+                  '${providerw!.post[index].title}',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, color: black, fontSize: 20),
+                ),
+                subtitle: Text(
+                  '${providerw!.post[index].body}',
+                  style: TextStyle(color: black, fontSize: 15),
+                ),
+              );
+            },
+          ),
         ),
       ),
     );

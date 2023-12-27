@@ -37,21 +37,23 @@ class _TodoScreenState extends State<TodoScreen> {
                 fontSize: 25, fontWeight: FontWeight.bold, color: white),
           ),
         ),
-        body: ListView.builder(
-          itemCount: providerw!.todo.length,
-          itemBuilder: (context, index) {
-            return ListTile(
-              leading: Text(
-                '${providerw!.todo[index].id}.',
-                style: TextStyle(color: black, fontSize: 15),
-              ),
-              title: Text(
-                '${providerw!.todo[index].title}',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold, color: black, fontSize: 20),
-              ),
-            );
-          },
+        body: Scrollbar(
+          child: ListView.builder(
+            itemCount: providerw!.todo.length,
+            itemBuilder: (context, index) {
+              return ListTile(
+                leading: Text(
+                  '${providerw!.todo[index].id}.',
+                  style: TextStyle(color: black, fontSize: 15),
+                ),
+                title: Text(
+                  '${providerw!.todo[index].title}',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, color: black, fontSize: 20),
+                ),
+              );
+            },
+          ),
         ),
       ),
     );

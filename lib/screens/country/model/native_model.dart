@@ -7,9 +7,9 @@ class NativeNameModel {
 
   factory NativeNameModel.mapToModel(Map m1) {
     return NativeNameModel(
-      engModel: EngModel.mapToModel(
-        m1['eng'],
-      ),
+      // engModel: EngModel.mapToModel(
+      //   m1['eng'],
+      // ),
     );
   }
 }

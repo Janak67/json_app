@@ -2,11 +2,12 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:json_app/screens/albums/model/albums_model.dart';
 import 'package:json_app/screens/comments/model/comment_model.dart';
-import 'package:json_app/screens/country/model/name_model.dart';
 import 'package:json_app/screens/photos/model/photo_model.dart';
 import 'package:json_app/screens/posts/model/posts_model.dart';
 import 'package:json_app/screens/todos/model/todo_model.dart';
 import 'package:json_app/screens/users/model/user_model.dart';
+
+import '../screens/country/model/country_model.dart';
 
 class JsonHelper {
   Future<List<PostModel>> postJsonToList() async {
@@ -57,11 +58,11 @@ class JsonHelper {
     return modelList;
   }
 
-  Future<List<CountryNameModel>> countryJsonToList() async {
+  Future<List<CountryModel>> countryJsonToList() async {
     var jsonString = await rootBundle.loadString('assets/json/country.json');
     List country = jsonDecode(jsonString);
-    List<CountryNameModel> modelList =
-        country.map((e) => CountryNameModel.mapToModel(e)).toList();
+    List<CountryModel> modelList =
+        country.map((e) => CountryModel.mapToModel(e)).toList();
     return modelList;
   }
 }

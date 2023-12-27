@@ -37,25 +37,27 @@ class _CommentsScreenState extends State<CommentsScreen> {
                 fontSize: 25, fontWeight: FontWeight.bold, color: white),
           ),
         ),
-        body: ListView.builder(
-          itemCount: providerw!.comment.length,
-          itemBuilder: (context, index) {
-            return ListTile(
-              leading: Text(
-                '${providerw!.comment[index].id}.',
-                style: TextStyle(color: black, fontSize: 15),
-              ),
-              title: Text(
-                '${providerw!.comment[index].name}',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold, color: black, fontSize: 20),
-              ),
-              subtitle: Text(
-                '${providerw!.comment[index].body}',
-                style: TextStyle(color: black, fontSize: 15),
-              ),
-            );
-          },
+        body: Scrollbar(
+          child: ListView.builder(
+            itemCount: providerw!.comment.length,
+            itemBuilder: (context, index) {
+              return ListTile(
+                leading: Text(
+                  '${providerw!.comment[index].id}.',
+                  style: TextStyle(color: black, fontSize: 15),
+                ),
+                title: Text(
+                  '${providerw!.comment[index].name}',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, color: black, fontSize: 20),
+                ),
+                subtitle: Text(
+                  '${providerw!.comment[index].body}',
+                  style: TextStyle(color: black, fontSize: 15),
+                ),
+              );
+            },
+          ),
         ),
       ),
     );

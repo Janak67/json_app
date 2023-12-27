@@ -37,25 +37,38 @@ class _CountryScreenState extends State<CountryScreen> {
                 fontSize: 25, fontWeight: FontWeight.bold, color: white),
           ),
         ),
-        body: ListView.builder(
-          itemCount: providerw!.country.length,
-          itemBuilder: (context, index) {
-            return ListTile(
-              leading: Text(
-                '${providerw!.country[index].common}.',
-                style: TextStyle(color: black, fontSize: 15),
-              ),
-              title: Text(
-                '${providerw!.country[index].official}',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold, color: black, fontSize: 20),
-              ),
-              subtitle: Text(
-                '${providerw!.country[index].nativeNameModel!.engModel!.official}',
-                style: TextStyle(color: black, fontSize: 15),
-              ),
-            );
-          },
+        body: Scrollbar(
+          child: ListView.builder(
+            itemCount: providerw!.country.length,
+            itemBuilder: (context, index) {
+              return ListTile(
+                // leading: Text(
+                //   '${providerw!.country[index].countryNameModel!.common}.',
+                //   style: TextStyle(color: black, fontSize: 15),
+                // ),
+                title: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '${providerw!.country[index].countryNameModel!.common}.',
+                      style: TextStyle(
+                          color: black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      '${providerw!.country[index].countryNameModel!.official}',
+                      style: TextStyle(color: black, fontSize: 22),
+                    ),
+                  ],
+                ),
+                // subtitle: Text(
+                //   '${providerw!.country[index].countryNameModel!.nativeNameModel!.engModel!.official}',
+                //   style: TextStyle(color: black, fontSize: 15),
+                // ),
+              );
+            },
+          ),
         ),
       ),
     );

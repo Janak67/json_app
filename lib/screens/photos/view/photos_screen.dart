@@ -37,27 +37,29 @@ class _PhotoScreenState extends State<PhotoScreen> {
                 fontSize: 25, fontWeight: FontWeight.bold, color: white),
           ),
         ),
-        body: ListView.builder(
-          itemCount: providerw!.photo.length,
-          itemBuilder: (context, index) {
-            return ListTile(
-              leading: Text(
-                '${providerw!.photo[index].id}.',
-                style: TextStyle(color: black, fontSize: 15),
-              ),
-              title: Text(
-                '${providerw!.photo[index].title}',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold, color: black, fontSize: 20),
-              ),
-              subtitle: Image.network(
-                '${providerw!.photo[index].thumbnailUrl}',
-                height: 150,
-                width: 100,
-                fit: BoxFit.cover,
-              ),
-            );
-          },
+        body: Scrollbar(
+          child: ListView.builder(
+            itemCount: providerw!.photo.length,
+            itemBuilder: (context, index) {
+              return ListTile(
+                leading: Text(
+                  '${providerw!.photo[index].id}.',
+                  style: TextStyle(color: black, fontSize: 15),
+                ),
+                title: Text(
+                  '${providerw!.photo[index].title}',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, color: black, fontSize: 20),
+                ),
+                subtitle: Image.network(
+                  '${providerw!.photo[index].thumbnailUrl}',
+                  height: 150,
+                  width: 100,
+                  fit: BoxFit.cover,
+                ),
+              );
+            },
+          ),
         ),
       ),
     );
