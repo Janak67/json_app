@@ -51,11 +51,14 @@ class _PhotoScreenState extends State<PhotoScreen> {
                   style: TextStyle(
                       fontWeight: FontWeight.bold, color: black, fontSize: 20),
                 ),
-                subtitle: Image.network(
-                  '${providerw!.photo[index].thumbnailUrl}',
-                  height: 150,
-                  width: 100,
-                  fit: BoxFit.cover,
+                subtitle: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.network(
+                    '${providerw!.photo[index].thumbnailUrl}',
+                    height: 150,
+                    width: 100,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               );
             },

@@ -5,6 +5,7 @@ import 'package:json_app/screens/comments/model/comment_model.dart';
 import 'package:json_app/screens/photos/model/photo_model.dart';
 import 'package:json_app/screens/posts/model/posts_model.dart';
 import 'package:json_app/screens/todos/model/todo_model.dart';
+import 'package:json_app/screens/user/model/users_model.dart';
 import 'package:json_app/screens/users/model/user_model.dart';
 
 import '../screens/country/model/country_model.dart';
@@ -64,5 +65,15 @@ class JsonHelper {
     List<CountryModel> modelList =
         country.map((e) => CountryModel.mapToModel(e)).toList();
     return modelList;
+  }
+
+  Future<UserModel> usersJsonToList() async {
+    var jsonString = await rootBundle.loadString('assets/json/users.json');
+    var users = jsonDecode(jsonString);
+    UserModel userModel = UserModel.mapToModel(users);
+    return userModel;
+    // List<CountryModel> modelList =
+    // country.map((e) => CountryModel.mapToModel(e)).toList();
+    // return modelList;
   }
 }
