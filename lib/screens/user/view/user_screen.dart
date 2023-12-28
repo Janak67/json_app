@@ -49,6 +49,8 @@ class _UserScreenState extends State<UserScreen> {
                       title: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          Text(
+                              'ID :-  ${providerw!.userModel!.dataModelList![index].id}'),
                           Row(
                             children: [
                               Text(

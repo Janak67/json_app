@@ -20,10 +20,10 @@ class UserModel {
   factory UserModel.mapToModel(Map m1) {
     List data = m1['data'];
     return UserModel(
-      page: m1[''],
-      per_page: m1[''],
-      total: m1[''],
-      total_pages: m1[''],
+      page: m1['page'],
+      per_page: m1['per_page'],
+      total: m1['total'],
+      total_pages: m1['total_pages'],
       supportModel: SupportModel.mapToModel(m1['support']),
       dataModelList: data.map((e) => DataModel.mapToModel(e)).toList(),
     );
