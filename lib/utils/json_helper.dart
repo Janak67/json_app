@@ -72,8 +72,5 @@ class JsonHelper {
     var users = jsonDecode(jsonString);
     UserModel userModel = UserModel.mapToModel(users);
     return userModel;
-    // List<CountryModel> modelList =
-    // country.map((e) => CountryModel.mapToModel(e)).toList();
-    // return modelList;
   }
 }

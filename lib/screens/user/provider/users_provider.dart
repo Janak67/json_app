@@ -3,7 +3,7 @@ import 'package:json_app/screens/user/model/users_model.dart';
 import 'package:json_app/utils/json_helper.dart';
 
 class UserProvider with ChangeNotifier {
-  UserModel? userModel = UserModel();
+  UserModel? userModel;
 
   Future<void> userGetData() async {
     JsonHelper jsonHelper = JsonHelper();
